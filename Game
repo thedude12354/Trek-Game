@@ -1,0 +1,44 @@
+/**
+ * 
+ * This is an empty program that you can change for your assignments
+ * 
+ * @author (put your name here) 
+ * @version (put the date here)
+ */
+
+import java.io.*;
+import java.text.*;
+import java.util.Scanner; 
+import java.util.Random;
+import java.util.ArrayList;
+
+public class skeleton  //change the name "skeleton" to the assignment name
+{
+
+static Scanner in = new Scanner(System.in);
+ 
+public static void main() {
+    Scanner scanner = new Scanner(System.in);   // this will help you get text input
+    DecimalFormat mf = new DecimalFormat("'$'0.00"); //this will help you output money properly
+    DecimalFormat bigmf = new DecimalFormat("'$'###,###,###,##0.00"); //this will help you output large amounts of money properly
+    DecimalFormat df = new DecimalFormat("#.###"); 
+    DecimalFormat bif = new DecimalFormat("###,###,###,###,###,###"); //this will help you output large integer values properly
+
+// declare your variables here - replace the examples below with your own:
+    // int x;
+    // String string;
+    // double doublenum;
+    // float floatnum;
+    
+// code starts here:
+    // how to output a message:
+    // System.out.print("Enter a number ");
+    
+    // how to get an integer from the user:
+    // x = in.nextInt(); 
+
+    // how to get text from the user:
+    // string = scanner.nextLine();
+    
+}
+}
