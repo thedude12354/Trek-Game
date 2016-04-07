@@ -1,73 +1,93 @@
-/**
- * 
- * This is an empty program that you can change for your assignments
- * 
- * @author (put your name here) 
- * @version (put the date here)
- */
-
-import java.io.*;
-import java.text.*;
-import java.util.Scanner; 
+import java.util.*;
+import java.math.*;
 import java.util.Random;
-import java.util.ArrayList;
-
-public class skeleton  //change the name "skeleton" to the assignment name
-{
-
-static Scanner in = new Scanner(System.in);
- 
-public static void main() {
-    Scanner scanner = new Scanner(System.in);   // this will help you get text input
-    DecimalFormat mf = new DecimalFormat("'$'0.00"); //this will help you output money properly
-    DecimalFormat bigmf = new DecimalFormat("'$'###,###,###,##0.00"); //this will help you output large amounts of money properly
-    DecimalFormat df = new DecimalFormat("#.###"); 
-    DecimalFormat bif = new DecimalFormat("###,###,###,###,###,###"); //this will help you output large integer values properly
-
-// declare your variables here - replace the examples below with your own:
-    // int x;
-    // String string;
-    // double doublenum;
-    // float floatnum;
+import java.util.Scanner;
+import java.text.*;
+import java.io.*;
+public class Main {
+    static Scanner in = new Scanner(System.in);
     
-// code starts here:
-    // how to output a message:
-    // System.out.print("Enter a number ");
-    
-    // how to get an integer from the user:
-    // x = in.nextInt(); 
+        public static void Start() {
+        System.out.println("Would you like a Short, Medium, or Long game?");
+        String x = in.nextLine();
+        System.out.println("Are you a Novice, Fair, Good, Expert, or Emeritus player?");
+        String y = in.nextLine();
+        System.out.println("Good Luck!");
+        System.out.println("What would you like to do?");
+        }
+        
+       public static void main() {
+                //create the grid
+       String x;
+       String y;
+       String z;
 
-    // how to get text from the user:
-    // string = scanner.nextLine();
-    
-}
-}
-public class CMD {
+       z = in.nextLine();
+        if (z.equals("scan")) {
+        final int rowWidth = 8;
+        final int colHeight = 8;
+        Random rand = new Random();
+        boolean a = true;
+        boolean b = true;
+        boolean c = true;
+        boolean d = true;
+        String [][] board = new String[rowWidth][colHeight];
+        
+        //fill the grid
+        for (char row = 0; row < board.length; row++) {
+            
+            for (char col = 0; col < board[row].length; col++) {
+                double r = Math.random();
 
-public static void main(String[] args) {
+                
+                
+                if(a == true && r <= .02) {
+                  board[row][col] = "P";
+                  a = false; }
+                
 
-  //Trying some variants how to start. 
+                 else if(b == true && r <= .04 && r > .02){
+                  board[row][col] = "K"; 
+                  b = false; }
+                
 
-  //String cmd = "C:\\WINDOWS\\system32\\cmd.exe";
-  //String[] cmd = {"C:\\WINDOWS\\system32\\cmd.exe","start"};
+                else if(c == true && r <= .06 && r > .04){
+                  board[row][col] = "B";  
+                  c = false; }
+                  
+                 else if(d == true && r <= .08 && r > .06){
+                  board[row][col] = " ";  
+                  d = false; }
+                  
+                  
+                  else 
+                    board[row][col] = "*";
+                
 
-  String[] cmd = {"C:\\WINDOWS\\system32\\cmd.exe","/c","start"};
+                }
+            }
+       //display output
+        for(int i = 0; i < board.length; i++) {
 
-   // notepad works fine
-   //String notepad = "C:\\WINDOWS\\system32\\notepad.exe";
+            for(int j = 0; j < board[i].length; j++) {
+                    
+                System.out.print(board[i][j] + " ");
+                //System.out.println();
+            }
+            System.out.println();
+        }
+        System.out.println("");
+        z = in.nextLine();
+        main();
+       }   
 
+        }
+        
+        public static void run() {
+            Start();
+            main();
+        }
+        
+    }//end of main
 
- try {        
-    Runtime runtime = Runtime.getRuntime();
-    //Process p = runtime.exec(notepad);
-    Process p = runtime.exec(cmd);
-
-
- }
-
-catch (java.io.IOException exception) {
-    System.out.println("Caught IOException: " + exception.getMessage());
-
-    }
-}
-}
+//end of class Main
