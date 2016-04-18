@@ -79,6 +79,11 @@ public class Main {
         System.out.println("");
         z = in.nextLine();
         main();
+    }else if( z.equals("exit")) {
+    System.exit(0);
+}else {
+           System.out.println("Parton");
+            main();
        }   
 
         }
