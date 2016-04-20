@@ -7,7 +7,8 @@ import java.io.*;
 public class Main {
     static Scanner in = new Scanner(System.in);
     
-        public static void Start() {
+        public static void Start() { 
+            //This will run the first time the game is launched. It currently does not matter what is entered.
         System.out.println("Would you like a Short, Medium, or Long game?");
         String x = in.nextLine();
         System.out.println("Are you a Novice, Fair, Good, Expert, or Emeritus player?");
@@ -15,15 +16,30 @@ public class Main {
         System.out.println("Good Luck!");
         System.out.println("What would you like to do?");
         }
-        
-       public static void main() {
+        // Here is where you will write your program. After every part of the code is done running the "Run();" method will be ran. This is where the user enters what he or she would like to do. Start by editing the if statment to accept whatever your machenic it is.
+        public static void Run(){
+        String z = in.nextLine();
+        if (z.equals("Scan")) {
+            Scan();
+        }
+        else if (z.equals("Exit")) {
+            System.exit(0);
+        }
+        else {
+            System.out.println("Parton");
+            Run();
+        }
+    }
+    // Now create your mechanic here. Whatever code you need to be run put here in a new method. If you need to edit any already existing code then do so. Just make sure to end it by calling the "Run();" method so the user can repeat the process.
+       public static void Scan() {
                 //create the grid
        String x;
        String y;
        String z;
-
-       z = in.nextLine();
-        if (z.equals("scan")) {
+        
+            
+        
+        
         final int rowWidth = 8;
         final int colHeight = 8;
         Random rand = new Random();
@@ -76,21 +92,12 @@ public class Main {
             }
             System.out.println();
         }
-        System.out.println("");
-        z = in.nextLine();
-        main();
-    }else if( z.equals("exit")) {
-    System.exit(0);
-}else {
-           System.out.println("Parton");
-            main();
-       }   
-
+        Run();
         }
         
         public static void run() {
             Start();
-            main();
+            Run();
         }
         
     }//end of main
